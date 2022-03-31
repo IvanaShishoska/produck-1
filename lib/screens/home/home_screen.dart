@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:mis_homework/models/models.dart';
+import '../../widgets/custom_appbar.dart';
+import '../../widgets/custom_navbar.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:mis_homework/widgets/section_title.dart';
-import '../../widgets/widget.dart';
+import '../../widgets/hero_carousel_card.dart';
+import '../../widgets/product_card.dart';
+import '../../widgets/section_title.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -22,32 +25,23 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: CustomNavBar(),
       body: Column(
         children: [
-          CarouselSlider(
+          Text("POPULAR", style: Theme.of(context).textTheme.headline3),
+          Container(
+              child: CarouselSlider(
             options: CarouselOptions(
               aspectRatio: 2.0,
               enlargeCenterPage: true,
               enableInfiniteScroll: false,
             ),
-            items:Category.categories
-                .map((category) => HeroCarouselCard(category: category))
+            items: Product.products
+                .map((product) => HeroCarouselCard( product:product))
                 .toList(),
-          ),
-          const SectionTitle(title: 'All categories'),
-          Stack(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width / 2.5,
-                height: 150,
-                child: Image.network(
-                  Product.products[0].imageUrl,
-                  fit: BoxFit.cover,
-                ),
-              )
-            ],
-          )
+          )),
+          SectionTitle(title: "ALL CATEGORIES"),
+    //product card
+          ProductCard(product: Product.products[1]),
         ],
-      )
+      ),
     );
   }
 }
-
