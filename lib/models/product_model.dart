@@ -1,141 +1,62 @@
 import 'package:equatable/equatable.dart';
 
-class Product extends Equatable{
+class Product extends Equatable {
   final String name;
   final String category;
   final String imageUrl;
   final double price;
+  final bool isRecommended;
+  final bool isPopular;
 
-  const Product({
-    required this.name,
-    required this.category,
-    required this.imageUrl,
-    required this.price,
-  });
+  const Product(
+      {required this.name,
+      required this.category,
+      required this.imageUrl,
+      required this.price,
+      required this.isPopular,
+      required this.isRecommended});
 
   @override
-  List<Object?> get props => [
-    name,
-    category,
-    imageUrl,
-    price,
-  ];
+  // TODO: implement props
+  List<Object?> get props =>
+      [name, category, imageUrl, price, isPopular, isRecommended];
 
   static List<Product> products = [
-    Product(
-      name: 'Book #1',
-      category: 'Books',
-      imageUrl:
-      'https://images.unsplash.com/photo-1598614187854-26a60e982dc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80', //https://unsplash.com/photos/dO9A6mhSZZY
-      price: 5.99,
-
-    ),
-    Product(
-      name: 'Book #2',
-      category: 'Books',
-      imageUrl:
-      'https://images.unsplash.com/photo-1610873167013-2dd675d30ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=488&q=80', //https://unsplash.com/photos/Viy_8zHEznk
-      price: 3.99,
-    ),
-    Product(
-      name: 'Item #1',
+    const Product(
+      name: 'Lipstick #1',
       category: 'Cosmetics',
       imageUrl:
-      'https://images.unsplash.com/photo-1603833797131-3c0a18fcb6b1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80', //https://unsplash.com/photos/5LIInaqRp5s
-      price: 2.99,
+          'https://thumbs.dreamstime.com/b/%C3%B0%C2%BFo%C3%B0%C2%BC%C3%B0%C2%B0%C3%B0-%C3%B0%C2%B0-lipstick-vector-illustration-127205027.jpg',
+      price: 2,
+      isRecommended: true,
+      isPopular: true,
     ),
-    Product(
-      name: 'Item #2',
+    const Product(
+      name: 'Lipstick #2',
       category: 'Cosmetics',
       imageUrl:
-      'https://images.unsplash.com/photo-1526424382096-74a93e105682?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80', //https://unsplash.com/photos/kcYXj4tBtes
-      price: 2.99,
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwud3rbwCvpnSdnkAYeZzcQ_WdeF6bdwKWRg&usqp=CAU',
+      price: 2,
+      isRecommended: true,
+      isPopular: true,
     ),
-    Product(
-      name: 'Item #3',
-      category: 'Cosmetics',
+    const Product(
+      name: 'Personal Computer #1',
+      category: 'Technology',
       imageUrl:
-      'https://images.unsplash.com/photo-1505252585461-04db1eb84625?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1552&q=80', //https://unsplash.com/photos/CrK843Pl9a4
-      price: 2.99,
+          'https://media.istockphoto.com/photos/modern-computerlaptop-with-blank-screen-on-counter-barand-window-view-picture-id1157789866?k=20&m=1157789866&s=612x612&w=0&h=1txTQ36VQ8Wc4N2AwrLwMQ9Llb9mleL8FVzQj_apU3E=',
+      price: 2,
+      isRecommended: true,
+      isPopular: true,
     ),
-    Product(
-      name: 'Item #4',
-      category: 'Cosmetics',
+    const Product(
+      name: 'Keyboard #1',
+      category: 'Technology',
       imageUrl:
-      'https://images.unsplash.com/photo-1598614187854-26a60e982dc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80', //https://unsplash.com/photos/dO9A6mhSZZY
-      price: 2.99,
+          'https://techcrunch.com/wp-content/uploads/2021/02/keyboard.jpg',
+      price: 2,
+      isRecommended: true,
+      isPopular: true,
     ),
-    Product(
-      name: 'Item #5',
-      category: 'Cosmetics',
-      imageUrl:
-      'https://images.unsplash.com/photo-1610873167013-2dd675d30ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=488&q=80', //https://unsplash.com/photos/Viy_8zHEznk
-      price: 2.99,
-    ),
-    Product(
-      name: 'Item #6',
-      category: 'Cosmetics',
-      imageUrl:
-      'https://images.unsplash.com/photo-1598614187854-26a60e982dc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80', //https://unsplash.com/photos/dO9A6mhSZZY
-      price: 2.99,
-    ),
-    Product(
-      name: 'Item #7',
-      category: 'Cosmetics',
-      imageUrl:
-      'https://images.unsplash.com/photo-1610873167013-2dd675d30ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=488&q=80', //https://unsplash.com/photos/Viy_8zHEznk
-      price: 2.99,
-    ),
-    Product(
-      name: 'Item #8',
-      category: 'Cosmetics',
-      imageUrl:
-      'https://images.unsplash.com/photo-1598614187854-26a60e982dc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80', //https://unsplash.com/photos/dO9A6mhSZZY
-      price: 2.99,
-    ),
-    Product(
-      name: 'Item #9',
-      category: 'Cosmetics',
-      imageUrl:
-      'https://images.unsplash.com/photo-1610873167013-2dd675d30ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=488&q=80', //https://unsplash.com/photos/Viy_8zHEznk
-      price: 2.99,
-    ),
-    Product(
-      name: 'Item #1',
-      category: 'Tech',
-      imageUrl:
-      'https://images.unsplash.com/photo-1598614187854-26a60e982dc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80', //https://unsplash.com/photos/dO9A6mhSZZY
-      price: 2.99,
-    ),
-    Product(
-      name: 'Item #2',
-      category: 'Tech',
-      imageUrl:
-      'https://images.unsplash.com/photo-1610873167013-2dd675d30ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=488&q=80', //https://unsplash.com/photos/Viy_8zHEznk
-      price: 2.99,
-    ),
-    Product(
-      name: 'Item #3',
-      category: 'Tech',
-      imageUrl:
-      'https://images.unsplash.com/photo-1598614187854-26a60e982dc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80', //https://unsplash.com/photos/dO9A6mhSZZY
-      price: 2.99,
-    ),
-    Product(
-      name: 'Item #4',
-      category: 'Tech',
-      imageUrl:
-      'https://images.unsplash.com/photo-1610873167013-2dd675d30ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=488&q=80', //https://unsplash.com/photos/Viy_8zHEznk
-      price: 2.99,
-    ),
-    Product(
-      name: 'Item #5',
-      category: 'Tech',
-      imageUrl:
-      'https://images.unsplash.com/photo-1610873167013-2dd675d30ef4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=488&q=80', //https://unsplash.com/photos/Viy_8zHEznk
-      price: 2.99,
-    ),
-
   ];
-
 }
